@@ -1,0 +1,25 @@
+---
+import HwsContentLayout from '../../layouts/HwsContentLayout.astro'
+---
+
+<HwsContentLayout
+  title="Content model"
+  description="A semantic model for publishing notebook entries, ideas, tools, labs and themes."
+  eyebrow="Documentation"
+  themes={["semantic modelling", "publishing", "content architecture"]}
+>
+  <h2>Shared fields</h2>
+  <p>Most publishable content should have a title, description, status, maturity, themes, tags and optional origin metadata.</p>
+
+  <h2>Core collections</h2>
+  <ul>
+    <li><strong>Notebook:</strong> working thoughts and early patterns.</li>
+    <li><strong>Ideas:</strong> named concepts, distinctions and provocations.</li>
+    <li><strong>Tools:</strong> reusable frameworks, methods, canvases and diagnostics.</li>
+    <li><strong>Labs:</strong> applied experiments, prototypes, systems and visual essays.</li>
+    <li><strong>Themes:</strong> cross-site navigation across the knowledge system.</li>
+  </ul>
+
+  <h2>Origin metadata</h2>
+  <p>Use origin metadata to show where a public artefact came from without turning the website into the whole knowledge system.</p>
+</HwsContentLayout>
