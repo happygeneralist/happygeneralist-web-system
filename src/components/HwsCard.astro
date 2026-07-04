@@ -1,0 +1,16 @@
+---
+interface Props {
+  title: string
+  href?: string
+  description?: string
+  meta?: string
+}
+
+const { title, href, description, meta } = Astro.props
+---
+
+<article class="hws-card">
+  {meta && <p class="hws-meta">{meta}</p>}
+  <h2>{href ? <a href={href}>{title}</a> : title}</h2>
+  {description && <p>{description}</p>}
+</article>
