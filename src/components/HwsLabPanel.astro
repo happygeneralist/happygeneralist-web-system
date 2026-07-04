@@ -1,0 +1,15 @@
+---
+interface Props {
+  title?: string
+  wide?: boolean
+  variant?: 'default' | 'diagram' | 'evidence'
+}
+
+const { title, wide = false, variant = 'default' } = Astro.props
+const classes = ['hws-card', wide ? 'hws-lab-panel--wide' : '', variant === 'diagram' ? 'hws-diagram-frame' : ''].filter(Boolean).join(' ')
+---
+
+<section class={classes}>
+  {title && <h2>{title}</h2>}
+  <slot />
+</section>
