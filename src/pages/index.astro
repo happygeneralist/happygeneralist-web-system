@@ -1,0 +1,34 @@
+---
+import HwsBaseLayout from '../layouts/HwsBaseLayout.astro'
+import HwsCard from '../components/HwsCard.astro'
+
+const sections = [
+  {
+    title: 'Standard pages',
+    href: '/examples/standard-page/',
+    description: 'A clear GOV.UK/x-gov-adjacent page pattern for ordinary publishing.'
+  },
+  {
+    title: 'Lab pages',
+    href: '/examples/lab-page/',
+    description: 'A modular large-screen-aware pattern for visual explanation and complex applied work.'
+  },
+  {
+    title: 'Content models',
+    href: '/docs/content-model/',
+    description: 'Semantic fields for notebook entries, ideas, tools, labs and themes.'
+  }
+]
+---
+
+<HwsBaseLayout title="Happygeneralist web system" siteName="Happygeneralist web system">
+  <section class="hws-container hws-page">
+    <header class="hws-page-header hws-prose">
+      <h1>A reusable visual, semantic and publishing system.</h1>
+      <p>Foundations for clear, accessible, GOV.UK-adjacent Astro projects with room for richer Lab-style explanation.</p>
+    </header>
+    <div class="hws-card-grid">
+      {sections.map((section) => <HwsCard {...section} />)}
+    </div>
+  </section>
+</HwsBaseLayout>
