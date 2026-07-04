@@ -1,0 +1,27 @@
+---
+import HwsLabLayout from '../../layouts/HwsLabLayout.astro'
+import HwsLabPanel from '../../components/HwsLabPanel.astro'
+---
+
+<HwsLabLayout
+  title="Lab page pattern"
+  description="A modular page pattern for visual explanation, complex systems work and applied experiments."
+  eyebrow="Example Lab"
+  themes={["labs", "visual explanation", "systems"]}
+>
+  <HwsLabPanel title="Opening signal" wide>
+    <p>This pattern gives complex work more room without turning the page into a decorative landing page.</p>
+  </HwsLabPanel>
+
+  <HwsLabPanel title="Context">
+    <p>Use this space to explain what the Lab is exploring and why it matters.</p>
+  </HwsLabPanel>
+
+  <HwsLabPanel title="System view" variant="diagram">
+    <p>A diagram, map, comparison or visual model can sit here.</p>
+  </HwsLabPanel>
+
+  <HwsLabPanel title="What it shows" wide>
+    <p>The Lab should close the loop by turning visual exploration into usable insight.</p>
+  </HwsLabPanel>
+</HwsLabLayout>
