@@ -1,0 +1,28 @@
+---
+import HwsBaseLayout from './HwsBaseLayout.astro'
+
+interface Props {
+  title: string
+  description: string
+  eyebrow?: string
+  themes?: string[]
+}
+
+const { title, description, eyebrow, themes = [] } = Astro.props
+---
+
+<HwsBaseLayout title={title} description={description}>
+  <article class="hws-container hws-page hws-prose">
+    <header class="hws-page-header">
+      {eyebrow && <p class="hws-meta">{eyebrow}</p>}
+      <h1>{title}</h1>
+      <p>{description}</p>
+      {themes.length > 0 && (
+        <ul class="hws-tag-list" aria-label="Themes">
+          {themes.map((theme) => <li class="hws-tag">{theme}</li>)}
+        </ul>
+      )}
+    </header>
+    <slot />
+  </article>
+</HwsBaseLayout>
