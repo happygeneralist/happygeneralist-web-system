@@ -1,0 +1,25 @@
+---
+import HwsContentLayout from '../../layouts/HwsContentLayout.astro'
+import HwsCard from '../../components/HwsCard.astro'
+---
+
+<HwsContentLayout
+  title="Standard page pattern"
+  description="A simple content-led pattern for readable public pages."
+  eyebrow="Example"
+  themes={["clarity", "accessibility", "publishing"]}
+>
+  <p>This pattern is for ordinary pages where the priority is comprehension, trust and low cognitive load.</p>
+
+  <h2>Use this when</h2>
+  <ul>
+    <li>the page needs to explain something clearly</li>
+    <li>the content should be easy to scan and read</li>
+    <li>visual complexity would get in the way</li>
+  </ul>
+
+  <h2>Related pattern</h2>
+  <div class="hws-card-grid">
+    <HwsCard title="Lab page pattern" href="/examples/lab-page/" description="Use the Lab pattern when the work needs modular, spatial or visual explanation." />
+  </div>
+</HwsContentLayout>
