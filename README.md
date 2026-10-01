@@ -66,3 +66,7 @@ npm run dev
 ```bash
 npm run build
 ```
+
+## Visual explanations
+
+Use [Visual explanation pattern](docs/visual-explanation.md) when translating a structured model or analysis into an accessible web explainer. Semantic/composition authority remains upstream in the owning project and `design-intelligence-orchestration`; this repository owns responsive, semantic and accessible web implementation.
