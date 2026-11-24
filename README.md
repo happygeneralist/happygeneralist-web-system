@@ -78,3 +78,7 @@ Open `/playground/` after `npm ci` and `npm run dev`. Explore four design profil
 - [Rendered acceptance and screenshots](docs/interface/acceptance.md)
 
 Existing standard and Lab publishing layouts remain available. This is still a copy-based reference system, not a packaged SDK.
+
+## Visual explanations
+
+Use [Visual explanation pattern](docs/visual-explanation.md) when translating a structured model or analysis into an accessible web explainer. Semantic/composition authority remains upstream in the owning project and `design-intelligence-orchestration`; this repository owns responsive, semantic and accessible web implementation.
