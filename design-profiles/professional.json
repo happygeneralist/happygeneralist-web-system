@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "preset": "professional",
+  "parameters": {
+    "visual": "restrained",
+    "layout": "split",
+    "density": "compact",
+    "colour": "teal",
+    "motion": "subtle",
+    "typography": "sans",
+    "surface": "tinted",
+    "components": "square",
+    "interaction": "explicit",
+    "conformity": "baseline"
+  }
+}

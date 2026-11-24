@@ -1,0 +1,28 @@
+---
+import HwsApplicationShell from './HwsApplicationShell.astro'
+import { type DesignProfile } from '../../design/profiles'
+import { workItems } from '../../design/workspace'
+interface Props { profile?: DesignProfile; interactive?: boolean }
+const { profile, interactive = true } = Astro.props
+---
+<HwsApplicationShell profile={profile} title="Example improvement workspace" name="Fieldwork / demonstration workspace" context="Synthetic data · local session" navItems={interactive ? [{ href: '#work-list', label: 'Work list' }, { href: '#progress', label: 'Progress' }, { href: '#workspace-guide', label: 'About this workspace' }] : []}>
+  <header class="workspace-heading"><p class="app-eyebrow">Application pattern / 01</p><h2>Improvement workspace</h2><p>Review progress and record the next step for each improvement.</p></header>
+  <div class="workspace-grid">
+    <section id={interactive ? 'work-list' : undefined} aria-label="Improvement work">
+      <div class="section-heading"><h3>Improvement work</h3><span id={interactive ? "work-count" : undefined}>4 items · example cycle</span></div>
+      {interactive && <form id="filter-form" class="app-toolbar"><div><label for="status-filter">Status</label><select id="status-filter" name="status"><option>All statuses</option><option>Planned</option><option>In progress</option><option>Ready</option></select></div><button type="submit" id="apply-filter">Apply filter</button><button type="button" id="clear-filter" class="secondary">Clear</button></form>}
+      <p class="table-instructions">{interactive ? 'Select up to two items to compare. Open an item to edit its note.' : 'The same improvement work in another profile.'}</p><p class="table-hint">On a narrow screen, scroll the table sideways to see status and progress.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Improvement items table">
+        <table><caption>Improvement work items</caption><thead><tr>{interactive && <th scope="col">Compare</th>}<th scope="col">Improvement</th><th scope="col">Status</th><th scope="col">Progress</th></tr></thead>
+        <tbody id={interactive ? 'work-rows' : undefined}>{workItems.map(item => <tr data-id={item.id}>{interactive && <td><input type="checkbox" name="compare" value={item.id} aria-label={`Compare ${item.title}`} /></td>}<th scope="row">{interactive ? <button type="button" class="text-button" data-open={item.id}>{item.title}</button> : item.title}<small>{item.id} · {item.owner}</small></th><td><span class="status">{item.status}</span></td><td>{item.completed}/{item.total}</td></tr>)}</tbody>
+        </table>
+      </div>
+      {interactive && <><p id="list-message" role="status"></p><button id="retry-data" type="button" hidden>Retry example data</button><div id="comparison" class="comparison" aria-live="polite"><h4>Compare work</h4><p>Select two items to see their progress side by side.</p></div></>}
+    </section>
+    <aside class="context-editor" aria-label="Contextual editing">
+      <p class="app-eyebrow">Context / working note</p><h3 id={interactive ? 'editor-title' : undefined}>{workItems[0].title}</h3>
+      {interactive ? <form id="note-form" novalidate><label for="work-note">Next step</label><p id="note-hint">A short, specific action. Maximum 240 characters.</p><textarea id="work-note" name="note" rows="4" maxlength="240" aria-describedby="note-hint note-error">{workItems[0].note}</textarea><p id="note-error" class="field-error" hidden></p><div class="app-actions"><button type="submit">Save note</button><button id="undo-note" type="button" class="secondary" disabled>Undo save</button></div><p id="save-message" role="status"></p></form> : <p>{workItems[0].note}</p>}
+      <details id={interactive ? 'workspace-guide' : undefined}><summary>How this workspace works</summary><p>Choose an item to edit its next step. Changes stay in memory until you reload. Saving supports one level of undo; nothing is sent to a server.</p></details>
+    </aside>
+  </div>
+  <section id={interactive ? 'progress' : undefined} class="progress-section" aria-label="Progress visualisation"><div class="section-heading"><h3>Progress, with context</h3><span>Completed steps / planned steps</span></div><p>These counts describe activity, not service outcomes. Items have different scopes.</p><div class="progress-chart">{workItems.map(item => <div class="progress-row" data-chart={item.id}><span>{item.title}</span><meter min="0" max={item.total} value={item.completed} aria-label={`${item.title}: completed steps`}>{item.completed} of {item.total}</meter><span>{item.completed} of {item.total}</span></div>)}</div></section>
+</HwsApplicationShell>

@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "preset": {
+      "type": "string",
+      "enum": [
+        "public-service",
+        "professional",
+        "personal",
+        "experimental"
+      ]
+    },
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "visual": {
+          "type": "string",
+          "enum": [
+            "restrained",
+            "editorial"
+          ]
+        },
+        "layout": {
+          "type": "string",
+          "enum": [
+            "stacked",
+            "split"
+          ]
+        },
+        "density": {
+          "type": "string",
+          "enum": [
+            "comfortable",
+            "compact"
+          ]
+        },
+        "colour": {
+          "type": "string",
+          "enum": [
+            "blue",
+            "teal",
+            "plum",
+            "ochre"
+          ]
+        },
+        "motion": {
+          "type": "string",
+          "enum": [
+            "none",
+            "subtle"
+          ]
+        },
+        "typography": {
+          "type": "string",
+          "enum": [
+            "sans",
+            "editorial"
+          ]
+        },
+        "surface": {
+          "type": "string",
+          "enum": [
+            "plain",
+            "tinted"
+          ]
+        },
+        "components": {
+          "type": "string",
+          "enum": [
+            "square",
+            "soft"
+          ]
+        },
+        "interaction": {
+          "type": "string",
+          "enum": [
+            "explicit",
+            "live"
+          ]
+        },
+        "conformity": {
+          "type": "string",
+          "enum": [
+            "baseline",
+            "expressive"
+          ]
+        }
+      },
+      "required": [
+        "visual",
+        "layout",
+        "density",
+        "colour",
+        "motion",
+        "typography",
+        "surface",
+        "components",
+        "interaction",
+        "conformity"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "preset",
+    "parameters"
+  ],
+  "additionalProperties": false
+}

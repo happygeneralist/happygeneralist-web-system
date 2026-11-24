@@ -67,6 +67,18 @@ npm run dev
 npm run build
 ```
 
+## Application interface MVP
+
+Open `/playground/` after `npm ci` and `npm run dev`. Explore four design profiles, ten independent design decisions, responsive previews, component states and a working synthetic workspace. Export `hws.design-profile.json` for a consuming project.
+
+- [Adoption and agent contract](docs/interface/agent-integration.md)
+- [Architecture, discovery and limitations](docs/interface/architecture.md)
+- [Third-party source evaluation and provenance](docs/interface/research.md)
+- [Interface acceptance gateway and local commands](docs/interface/gateway.md)
+- [Rendered acceptance and screenshots](docs/interface/acceptance.md)
+
+Existing standard and Lab publishing layouts remain available. This is still a copy-based reference system, not a packaged SDK.
+
 ## Visual explanations
 
 Use [Visual explanation pattern](docs/visual-explanation.md) when translating a structured model or analysis into an accessible web explainer. Semantic/composition authority remains upstream in the owning project and `design-intelligence-orchestration`; this repository owns responsive, semantic and accessible web implementation.

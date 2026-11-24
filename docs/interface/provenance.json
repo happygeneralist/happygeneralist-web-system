@@ -1,0 +1,84 @@
+{
+  "reviewed": "2026-11-24",
+  "projects": [
+    {
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sha": "a4fc248f6136552cb881e298847abc7ddce84e6b",
+      "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "selected": false,
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        ".claude/skills/ui-ux-pro-max/SKILL.md",
+        "src/ui-ux-pro-max/scripts/search.py"
+      ]
+    },
+    {
+      "repo": "anthropics/skills",
+      "sha": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "source": "https://github.com/anthropics/skills",
+      "selected": false,
+      "inspectedPaths": [
+        "README.md",
+        "skills/frontend-design/SKILL.md",
+        "skills/frontend-design/LICENSE.txt"
+      ]
+    },
+    {
+      "repo": "Leonxlnx/taste-skill",
+      "sha": "6c0b5c78f5d31776e2210305abaa210cdc0030bf",
+      "source": "https://github.com/Leonxlnx/taste-skill",
+      "selected": false,
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "skills/taste-skill/SKILL.md",
+        "skills/taste-skill/scripts/gate.mjs"
+      ]
+    },
+    {
+      "repo": "vercel-labs/web-interface-guidelines",
+      "sha": "434b7f91364665f2f733b310ec54809bf8f37937",
+      "source": "https://github.com/vercel-labs/web-interface-guidelines",
+      "selected": true,
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE"
+      ]
+    },
+    {
+      "repo": "microsoft/playwright-mcp",
+      "sha": "2337aff0213d28db41d3e3daf48cee19b3d0bd82",
+      "source": "https://github.com/microsoft/playwright-mcp",
+      "selected": false,
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "package.json",
+        "config.d.ts"
+      ]
+    },
+    {
+      "repo": "pbakaus/impeccable",
+      "sha": "b49177d32788f2dc585c42831d845dacf1ebed2c",
+      "source": "https://github.com/pbakaus/impeccable",
+      "selected": false,
+      "inspectedPaths": [
+        "README.md",
+        "LICENSE",
+        "package.json",
+        ".agents/skills/impeccable/SKILL.md",
+        "cli/bin/cli.js",
+        "skill/scripts/impeccable"
+      ]
+    }
+  ],
+  "vendored": {
+    "directory": "vendor/web-interface-guidelines",
+    "revision": "434b7f91364665f2f733b310ec54809bf8f37937",
+    "sha256": {
+      "LICENSE": "6cd1609c9c12233507cdd2ce0d32e9a721e3c27494951be06b90090deeeb7af2",
+      "README.md": "eda7dfa9998215267c7f920475d1773ea4129cb08ed088276ca598dd45d20aa5"
+    }
+  }
+}

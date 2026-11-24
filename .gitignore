@@ -33,3 +33,7 @@ tmp/
 
 # Coverage
 coverage/
+
+# Browser verification output (reviewed screenshots live in docs/interface/evidence)
+playwright-report/
+test-results/

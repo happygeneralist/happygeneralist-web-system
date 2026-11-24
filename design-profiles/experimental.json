@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "preset": "experimental",
+  "parameters": {
+    "visual": "editorial",
+    "layout": "split",
+    "density": "comfortable",
+    "colour": "ochre",
+    "motion": "subtle",
+    "typography": "editorial",
+    "surface": "plain",
+    "components": "square",
+    "interaction": "live",
+    "conformity": "expressive"
+  }
+}
