@@ -20,6 +20,8 @@ npm run dev -- --host 127.0.0.1
 
 Open `http://127.0.0.1:4321/playground/`. Stop the local server with Ctrl+C. The browser test runner builds and starts its own loopback preview server. Stop any server on port 4321 before running it. Screenshots are written to `docs/interface/evidence/`; HTML/trace diagnostics go to ignored `playwright-report/` and `test-results/`. Only refresh reviewed screenshots alongside the code they represent.
 
+Apply the existing [interface-expression proposal](../interface-expressions.md), including all ten usability heuristics. The MVP's explicit mapping is in [acceptance.md](acceptance.md).
+
 ## Acceptance tasks
 
 | Area | Evidence required |

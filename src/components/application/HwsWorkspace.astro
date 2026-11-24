@@ -6,7 +6,7 @@ interface Props { profile?: DesignProfile; interactive?: boolean }
 const { profile, interactive = true } = Astro.props
 ---
 <HwsApplicationShell profile={profile} title="Example improvement workspace" name="Fieldwork / demonstration workspace" context="Synthetic data · local session" navItems={interactive ? [{ href: '#work-list', label: 'Work list' }, { href: '#progress', label: 'Progress' }, { href: '#workspace-guide', label: 'About this workspace' }] : []}>
-  <header class="workspace-heading"><p class="app-eyebrow">Application pattern / 01</p><h2>Small improvements,<br />clearer services.</h2><p>Review the work, compare progress and decide what happens next.</p></header>
+  <header class="workspace-heading"><p class="app-eyebrow">Application pattern / 01</p><h2>Improvement workspace</h2><p>Review progress and record the next step for each improvement.</p></header>
   <div class="workspace-grid">
     <section id={interactive ? 'work-list' : undefined} aria-label="Improvement work">
       <div class="section-heading"><h3>Improvement work</h3><span id={interactive ? "work-count" : undefined}>4 items · example cycle</span></div>

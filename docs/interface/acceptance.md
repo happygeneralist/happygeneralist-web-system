@@ -1,6 +1,6 @@
 # MVP rendered interface acceptance
 
-Reviewed 24 November 2026 on branch `codex/application-interface-mvp`, against the source and screenshots committed in this pull request. Starting publishing revision: `53f6704`. This is an agent implementation review for MVP evaluation, not user-research validation or production accessibility certification.
+Reviewed 24 November 2026 on branch `codex/application-interface-mvp`, against the source and screenshots committed in this pull request. Initial local publishing revision: `53f6704`; remote main guidance at `a75afba` was subsequently integrated. This is an agent implementation review for MVP evaluation, not user-research validation or production accessibility certification.
 
 ## Result
 
@@ -17,7 +17,7 @@ Production release is not accepted by this record: inherited dependency audit fi
 | `npm run profile:check` | Presets, JSON Schema and machine-readable decisions match the TypeScript source. |
 | `npm run skills:verify` | Pinned third-party guideline text and licence hashes match provenance. |
 | `npm run build` | Astro checks and builds 5 static routes, including existing standard/Lab/content-model pages and validated content collections. Also run by the browser gateway. |
-| `npm run test:interface` | 8 tests pass against the built static site in Chromium; final run 21.7 seconds including server build/startup. |
+| `npm run test:interface` | 8 tests pass against the built static site in Chromium; final integrated run passes including server build/startup. |
 | Preset viewport checks | All four presets at 1440 × 1000, 768 × 1000 and 390 × 1000; no page-level horizontal overflow. |
 | Accessibility scans | No axe violations for selected WCAG A/AA tags in 12 preset/viewport combinations and the expanded parameter controls. |
 | Tasks and state transitions | Explicit and live filtering, contextual edit focus, field validation, save/undo, unsaved edit cancellation, two-item comparison, third-item rejection, linked visual selection, unavailable states, retry and validated JSON download pass. |
@@ -36,11 +36,31 @@ The review led to these refinements:
 - Corrected the status control's label association after the representative task test exposed it.
 - Added visible mobile table-scrolling guidance and moved comparison/edit instructions outside the scrolling region so they remain readable.
 - Limited the editor form's measure on wide stacked layouts.
+- Replaced the workspace's editorial slogan with a task-specific heading, aligning with the existing application-expression proposal.
 - Hid unavailable contextual/progress content, replaced stale item counts and put Retry beside the error message.
 - Kept the comparison reference explicitly read-only and removed its misleading navigation links.
 - Retained visible focus, non-colour status labels and text equivalents for progress. Activity is explicitly distinguished from service outcomes.
 
 Horizontal table scrolling is intentional on narrow screens: the region is labelled and keyboard-focusable, while the surrounding page reflows. This deserves user evaluation in the first consuming application, particularly if the dataset or task changes. The broader tablet and full-page screenshots provide context; they are not generated concept images.
+
+## Existing ten-heuristic review
+
+This mapping applies the review convention already proposed in `docs/interface-expressions.md`.
+
+| Heuristic | Observed MVP behaviour and boundary |
+| --- | --- |
+| Visibility of system status | Item count, active item, save feedback, selection count and explicit unavailable-state messages. |
+| Match with the real world | Work items, owners, statuses, next steps and completed/planned steps use plain task terminology. Synthetic data and activity/outcome distinctions are visible. |
+| User control and freedom | Clear filters, cancel unsaved-edit discard, undo the last save and retry unavailable data. Reload resets the local demonstration. |
+| Consistency and standards | Native forms, links, table, disclosure and meters; stable labels and the same data across presets. |
+| Error prevention | Enforced two-item comparison, note length limit, unsaved-edit protection and disabled/hidden editing when data is unavailable. |
+| Recognition rather than recall | Visible status choices, item names/owners, persistent context and labels beside controls. |
+| Flexibility and efficiency | Keyboard operation, compact density, split editor and opt-in live filtering. No undiscoverable custom shortcuts. |
+| Aesthetic and minimalist design | Task-focused workspace header, ruled sections and contextual form. Playground configuration is separate from the application task. |
+| Error recognition and recovery | Specific field error linked to input, focus on the invalid field, clear retry and successful-save undo. |
+| Help and documentation | Inline note hint, disclosure explaining local-save scope, visible mobile scrolling guidance and adoption/running documentation. |
+
+These are implementation observations, not empirical proof of usability. Test the first consuming project's real task and users before promoting further patterns.
 
 ## Screenshot index
 

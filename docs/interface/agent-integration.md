@@ -1,6 +1,6 @@
 # Agent and consuming-project contract
 
-The application system extends the existing copy-based usage convention. Project needs and constraints remain authoritative; this contract supplies interface decisions and acceptance evidence. It neither owns orchestration nor imports protected design methods.
+The application system extends the existing copy-based usage convention. Read the existing [two-expression proposal](../interface-expressions.md) and [visual-explanation guidance](../visual-explanation.md) alongside this contract. Project needs and constraints remain authoritative; this contract supplies interface decisions and acceptance evidence. It neither owns orchestration nor imports protected design methods.
 
 ## Adopt in an Astro repository
 
