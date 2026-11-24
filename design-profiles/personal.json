@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "preset": "personal",
+  "parameters": {
+    "visual": "editorial",
+    "layout": "stacked",
+    "density": "comfortable",
+    "colour": "plum",
+    "motion": "none",
+    "typography": "editorial",
+    "surface": "tinted",
+    "components": "soft",
+    "interaction": "explicit",
+    "conformity": "baseline"
+  }
+}

@@ -91,3 +91,11 @@ Preserve accessibility.
 Document conventions when adding new patterns.
 
 Prefer infrastructure changes that reduce demonstrated publishing or interaction friction.
+
+## Application interfaces
+
+Read and validate `hws.design-profile.json` before changing an application interface. Follow `docs/interface/agent-integration.md` and the acceptance gateway in `docs/interface/gateway.md`. Profiles apply to the opt-in application layer; existing publishing pages retain their default baseline.
+
+Start with users, tasks and the conceptual model, then establish information and interaction architecture. Implement with the existing foundations, inspect the actual rendered interface, refine and verify. Accessibility, semantics, usability and truthful information remain non-negotiable in every profile.
+
+The pinned `vendor/web-interface-guidelines/README.md` is a subordinate review reference. Project requirements take precedence. Do not install additional design skills, hooks or orchestration as a side effect. Record rendered evidence; a passing build alone is not interface acceptance.

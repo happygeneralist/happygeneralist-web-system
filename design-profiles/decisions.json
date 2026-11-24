@@ -1,0 +1,84 @@
+{
+  "visual": {
+    "label": "Visual expressiveness",
+    "values": [
+      "restrained",
+      "editorial"
+    ],
+    "effect": "Quiet heading or larger heading with an accent rule."
+  },
+  "layout": {
+    "label": "Layout experimentation",
+    "values": [
+      "stacked",
+      "split"
+    ],
+    "effect": "Full-width work list or a list beside its contextual editor."
+  },
+  "density": {
+    "label": "Information density",
+    "values": [
+      "comfortable",
+      "compact"
+    ],
+    "effect": "Changes row padding and section spacing, never hides information."
+  },
+  "colour": {
+    "label": "Colour expressiveness",
+    "values": [
+      "blue",
+      "teal",
+      "plum",
+      "ochre"
+    ],
+    "effect": "Changes the accessible accent and tint palette."
+  },
+  "motion": {
+    "label": "Motion intensity",
+    "values": [
+      "none",
+      "subtle"
+    ],
+    "effect": "Immediate changes or a 160 ms feedback entrance; reduced motion always wins."
+  },
+  "typography": {
+    "label": "Typography",
+    "values": [
+      "sans",
+      "editorial"
+    ],
+    "effect": "System sans throughout or serif headings with sans controls."
+  },
+  "surface": {
+    "label": "Surface treatment",
+    "values": [
+      "plain",
+      "tinted"
+    ],
+    "effect": "White workspace or a softly tinted workspace ground."
+  },
+  "components": {
+    "label": "Component styling",
+    "values": [
+      "square",
+      "soft"
+    ],
+    "effect": "Square or gently rounded controls and status markers."
+  },
+  "interaction": {
+    "label": "Interaction experimentation",
+    "values": [
+      "explicit",
+      "live"
+    ],
+    "effect": "Apply a status filter with a button or filter immediately on change."
+  },
+  "conformity": {
+    "label": "Design system conformity",
+    "values": [
+      "baseline",
+      "expressive"
+    ],
+    "effect": "Baseline border and link treatment or heavier section rules and accent navigation."
+  }
+}

@@ -1,0 +1,49 @@
+---
+import HwsBaseLayout from '../layouts/HwsBaseLayout.astro'
+import HwsWorkspace from '../components/application/HwsWorkspace.astro'
+import { parameters, presetNames } from '../design/profiles'
+---
+<HwsBaseLayout title="Interface playground · Happygeneralist" description="Explore validated design profiles using a working synthetic application.">
+  <div class="playground">
+    <header class="playground-heading"><p class="eyebrow">Happygeneralist / application interface MVP</p><h1>One system.<br /><span>Room to explore.</span></h1><p>Shape an interface around its task. Compare the same workspace across four design profiles, then take a validated profile into your next project.</p><a href="#preview">Go to the working preview ↓</a></header>
+    <section class="profile-controls" aria-labelledby="controls-title"><div><p class="eyebrow">01 / Design direction</p><h2 id="controls-title">Choose a starting point</h2><p>Every profile preserves semantics, focus visibility, readable contrast and keyboard access.</p></div><div><label for="profile">Design profile</label><select id="profile">{Object.entries(presetNames).map(([value, label]) => <option value={value}>{label}</option>)}</select><div class="control-actions"><button id="reset-profile" type="button">Reset preset</button><button id="export-profile" type="button">Export profile ↓</button></div><p id="profile-message" role="status"></p></div></section>
+    <details class="parameter-panel"><summary>Adjust the 10 design parameters</summary><div class="parameter-grid">{Object.entries(parameters).map(([key, spec]) => <label for={`param-${key}`}>{spec.label}<select id={`param-${key}`} data-parameter={key}>{spec.values.map(value => <option value={value}>{value.charAt(0).toUpperCase() + value.slice(1)}</option>)}</select><small>{spec.effect}</small></label>)}</div></details>
+    <section id="preview" aria-labelledby="preview-title"><div class="preview-heading"><div><p class="eyebrow">02 / Working preview</p><h2 id="preview-title">Try the task, feel the difference.</h2></div><label for="preview-width">Preview width<select id="preview-width"><option value="full">Available width</option><option value="mobile">Mobile · 390 px</option><option value="tablet">Tablet · 768 px</option></select></label></div><div class="preview-frame" id="primary-preview"><HwsWorkspace /></div></section>
+    <section class="state-controls" aria-labelledby="states-title"><h2 id="states-title">Inspect a state</h2><label for="data-state">Workspace data<select id="data-state"><option value="ready">Ready</option><option value="empty">Empty</option><option value="loading">Loading</option><option value="error">Error</option></select></label><p id="state-message" role="status"></p><p>These are controlled demonstrations. Saving an empty note shows real field validation; saving a valid note enables undo.</p></section>
+    <section class="compare-section" aria-labelledby="compare-title"><p class="eyebrow">03 / Same content, different decisions</p><div class="preview-heading"><h2 id="compare-title">Compare with a preset</h2><label for="compare-profile">Reference profile<select id="compare-profile">{Object.entries(presetNames).map(([value, label]) => <option value={value} selected={value === 'professional'}>{label}</option>)}</select></label></div><p>The read-only reference uses the same items and progress values. Use the working preview above to test interactions.</p><div id="reference-preview"><HwsWorkspace interactive={false} /></div></section>
+    <noscript><p>The baseline workspace is visible. Enable JavaScript to switch profiles, edit notes and export a profile.</p></noscript>
+  </div>
+</HwsBaseLayout>
+<script>import '../scripts/playground'</script>
+<style>
+.playground { width: min(100% - 2rem, 1440px); margin: 0 auto; padding: 3rem 0; }
+.playground-heading { padding-bottom: 3rem; max-width: 780px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; font-weight: 700; }
+h1 { font-size: clamp(3rem, 7vw, 6rem); line-height: 1.03; letter-spacing: -.05em; margin: 1.5rem 0; }
+h1 span { color: #586760; }
+.playground-heading > p:not(.eyebrow) { font-size: 1.2rem; max-width: 60ch; }
+h2 { font-size: 1.65rem; line-height: 1.2; margin-top: 0; }
+label { display: block; font-weight: 650; }
+select, button { font: inherit; padding: .65rem; min-height: 44px; border: 1px solid #65777c; background: white; color: #182b30; }
+select { display: block; width: 100%; margin: .35rem 0; }
+button, summary { cursor: pointer; }
+.profile-controls { display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; border-top: 2px solid #182b30; padding: 1.5rem 0; }
+.profile-controls p { max-width: 62ch; }
+.control-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+#export-profile { background: #182b30; color: #fff; }
+.parameter-panel { border-top: 1px solid #b1b4b6; border-bottom: 1px solid #b1b4b6; padding: 1.2rem 0; margin-bottom: 3rem; }
+.parameter-panel summary { font-weight: 650; min-height: 44px; }
+.parameter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.parameter-grid small { font-weight: 400; display: block; color: #505a5f; }
+.preview-heading { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+.preview-heading h2 { margin-bottom: 0; }
+.preview-frame { max-width: 100%; margin-inline: auto; }
+.preview-frame[data-width=mobile] { width: 390px; }
+.preview-frame[data-width=tablet] { width: 768px; }
+.state-controls { padding: 1.5rem; margin-top: 1rem; background: #f3f2f1; }
+.state-controls h2 { font-size: 1.2rem; }
+.state-controls select { width: min(100%, 20rem); }
+.state-controls p { max-width: 75ch; }
+.compare-section { margin-top: 4rem; }
+@media (max-width: 650px) { .profile-controls { grid-template-columns: 1fr; gap: .5rem; } .playground { padding-top: 2rem; } }
+</style>

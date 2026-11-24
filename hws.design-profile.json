@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "preset": "public-service",
+  "parameters": {
+    "visual": "restrained",
+    "layout": "stacked",
+    "density": "comfortable",
+    "colour": "blue",
+    "motion": "none",
+    "typography": "sans",
+    "surface": "plain",
+    "components": "square",
+    "interaction": "explicit",
+    "conformity": "baseline"
+  }
+}

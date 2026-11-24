@@ -21,7 +21,27 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Check and build
-        run: npm run build
+      - name: Check profile, provenance and schema behaviour
+        run: |
+          npm test
+          npm run profile:validate
+          npm run profile:check
+          npm run skills:verify
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build and verify rendered interfaces
+        run: npm run test:interface
+
+      - name: Retain rendered evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: interface-evidence
+          path: |
+            docs/interface/evidence/
+            playwright-report/
+          retention-days: 14

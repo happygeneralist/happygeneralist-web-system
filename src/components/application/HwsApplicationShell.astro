@@ -1,0 +1,19 @@
+---
+import '../../styles/application.css'
+import projectProfile from '../../../hws.design-profile.json'
+import { profileAttributes, profileSchema, type DesignProfile } from '../../design/profiles'
+interface Props {
+  profile?: DesignProfile
+  title: string
+  name?: string
+  context?: string
+  navItems?: { href: string; label: string }[]
+}
+const { profile = profileSchema.parse(projectProfile), title, name = 'Workspace', context, navItems = [] } = Astro.props
+const validated = profileSchema.parse(profile)
+---
+<section class="hws-app" {...profileAttributes(validated)} aria-label={title}>
+  <header class="app-masthead"><strong>{name}</strong>{context && <span>{context}</span>}</header>
+  {navItems.length > 0 && <nav class="app-nav" aria-label="Workspace">{navItems.map(item => <a href={item.href}>{item.label}</a>)}</nav>}
+  <div class="app-body"><slot /></div>
+</section>

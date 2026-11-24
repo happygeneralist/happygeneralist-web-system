@@ -10,17 +10,26 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "test": "node --import tsx --test tests/profiles.test.ts",
+    "test:interface": "playwright test",
+    "profile:validate": "node --import tsx scripts/validate-profile.ts",
+    "skills:verify": "node scripts/verify-vendor.mjs",
+    "profile:generate": "node --import tsx scripts/export-profiles.ts",
+    "profile:check": "node --import tsx scripts/export-profiles.ts --check"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.4.0",
+    "@astrojs/mdx": "^5.0.0",
     "astro": "^6.2.1",
     "govuk-frontend": "^6.1.0",
     "zod": "^4.4.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.65.1",
     "@types/node": "^25.6.0",
+    "tsx": "4.23.15",
     "typescript": "^5.9.3"
   }
 }

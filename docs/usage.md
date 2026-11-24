@@ -26,3 +26,7 @@ Do not package it too early.
 3. Refactor repeated pieces back into this repo.
 4. Document the convention.
 5. Package only after the convention has survived real use.
+
+## Application interfaces
+
+Use the [application adoption contract](interface/agent-integration.md) for validated profiles and scoped application styles. Inspect `/playground/` before adopting. The shell loads `hws.design-profile.json`; publishing layouts do not. See the [gateway](interface/gateway.md) for local testing and rendered acceptance.
